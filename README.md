@@ -20,10 +20,6 @@ Website sederhana untuk menampilkan kutipan (quote) ayat Al-Qur'an secara acak, 
    ```
 2. Buka file `index.html` di browser.
 
-## Deploy ke GitHub Pages
-
-Repo ini sudah siap untuk GitHub Pages. Cukup push ke branch `main` dan aktifkan Pages di pengaturan repository.
-
 ## Sumber API
 
 - [equran.id](https://equran.id/apidev)
