@@ -196,6 +196,69 @@
         #ig-canvas {
             display: none;
         }
+        .audio-controls {
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+        }
+        .audio-controls.show {
+            display: block;
+        }
+        .qari-selector {
+            margin-bottom: 15px;
+        }
+        .qari-selector label {
+            display: block;
+            margin-bottom: 8px;
+            color: #219150;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        #qari-select {
+            padding: 8px 16px;
+            border: 2px solid #219150;
+            border-radius: 8px;
+            background: #fff;
+            color: #219150;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 250px;
+            transition: border-color 0.2s;
+        }
+        #qari-select:hover {
+            border-color: #17623a;
+        }
+        #qari-select:focus {
+            outline: none;
+            border-color: #17623a;
+            box-shadow: 0 0 0 3px rgba(33, 145, 80, 0.1);
+        }
+        .btn-audio {
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #8e24aa 60%, #ab47bc 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(142,36,170,0.10);
+            transition: background 0.2s, transform 0.2s;
+            margin-bottom: 16px;
+        }
+        .btn-audio:hover {
+            background: linear-gradient(90deg, #ab47bc 60%, #8e24aa 100%);
+            transform: scale(1.04);
+        }
+        .btn-audio:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        #audio-icon {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
@@ -204,6 +267,18 @@
         <div class="arabic" id="arabic"></div>
         <div class="quote" id="quote">Memuat...</div>
         <div class="surah" id="surah"></div>
+        
+        <!-- Audio Controls -->
+        <div class="audio-controls" id="audio-controls">
+            <button class="btn-audio" id="audio-btn" onclick="toggleAudio()">
+                <span id="audio-icon">▶️</span> Putar Audio (Sheikh Mishary Rasyid Al-Afasy)
+            </button>
+            <button class="btn-audio" id="download-audio-btn" onclick="downloadAudio()" style="display: none;">
+                <span id="download-audio-icon">📥</span> Download Audio
+            </button>
+            <audio id="audio-player" preload="none"></audio>
+        </div>
+        
     <button class="btn-refresh" onclick="getQuote()">Tampilkan Quote Lain</button>
         <div class="button-row">
             <button class="btn-salin" onclick="salinQuote()">Salin Teks</button>
@@ -224,5 +299,15 @@
     <canvas id="ig-canvas" width="1080" height="1350"></canvas>
     <!-- Download link dipindah ke modal -->
     <script src="script.js"></script>
+    <script>
+        // Initialize audio events and load first quote
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAudioEvents();
+            // Add a small delay to ensure all elements are ready
+            setTimeout(function() {
+                getQuote();
+            }, 100);
+        });
+    </script>
 </body>
 </html>
