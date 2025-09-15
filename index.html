@@ -259,6 +259,124 @@
         #audio-icon {
             margin-right: 8px;
         }
+
+        /* Media query untuk tampilan mobile */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 32px 24px 24px 24px;
+                margin: 40px auto;
+            }
+            
+            h1 {
+                font-size: 2em;
+                margin-bottom: 24px;
+            }
+            
+            .quote {
+                font-size: 1.5em;
+                margin: 24px 0 16px 0;
+                min-height: 80px;
+            }
+            
+            .arabic {
+                font-size: 2em;
+                margin-bottom: 12px;
+            }
+            
+            .surah {
+                font-size: 1.1em;
+                margin-bottom: 20px;
+            }
+            
+            .btn-refresh {
+                padding: 14px 32px;
+                font-size: 1.2em;
+                margin-bottom: 16px;
+            }
+            
+            .btn-generate, .btn-salin {
+                padding: 12px 28px;
+                font-size: 1.1em;
+            }
+            
+            .button-row {
+                gap: 16px;
+                margin-top: 16px;
+            }
+            
+            .footer {
+                font-size: 1em;
+                margin-top: 24px;
+            }
+            
+            .modal-content {
+                padding: 24px 16px 16px 16px;
+            }
+            
+            .modal-close {
+                padding: 8px 24px;
+                font-size: 1em;
+            }
+            
+            #qari-select {
+                min-width: 200px;
+                font-size: 0.9em;
+            }
+            
+            .btn-audio {
+                padding: 10px 24px;
+                font-size: 1em;
+            }
+        }
+        
+        /* Media query untuk layar yang lebih kecil */
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 24px 16px 16px 16px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.7em;
+            }
+            
+            .quote {
+                font-size: 1.3em;
+                min-height: 60px;
+            }
+            
+            .arabic {
+                font-size: 1.7em;
+            }
+            
+            .surah {
+                font-size: 1em;
+            }
+            
+            .btn-refresh {
+                padding: 12px 28px;
+                font-size: 1.1em;
+            }
+            
+            .btn-generate, .btn-salin {
+                padding: 10px 24px;
+                font-size: 1em;
+            }
+            
+            .button-row {
+                gap: 12px;
+            }
+            
+            #qari-select {
+                min-width: 150px;
+                font-size: 0.8em;
+            }
+            
+            .btn-audio {
+                padding: 8px 20px;
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
