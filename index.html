@@ -200,6 +200,7 @@
             text-align: center;
             margin: 20px 0;
             display: none;
+            height: 40px;
         }
         .audio-controls.show {
             display: block;
@@ -386,6 +387,8 @@
         <div class="quote" id="quote">Memuat...</div>
         <div class="surah" id="surah"></div>
         
+        <button class="btn-refresh" onclick="getQuote()">Tampilkan Quote Lain</button>
+        
         <!-- Audio Controls -->
         <div class="audio-controls" id="audio-controls">
             <button class="btn-audio" id="audio-btn" onclick="toggleAudio()">
@@ -397,7 +400,6 @@
             <audio id="audio-player" preload="none"></audio>
         </div>
         
-    <button class="btn-refresh" onclick="getQuote()">Tampilkan Quote Lain</button>
         <div class="button-row">
             <button class="btn-salin" onclick="salinQuote()">Salin Teks</button>
             <button class="btn-generate" onclick="generateImage()">Generate Gambar</button>
